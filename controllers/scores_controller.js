@@ -18,7 +18,7 @@ scores.get('/', (req, res) => {
         }
         res.render('scores/index.ejs', {
             scores: allScores,
-            currentUser: req.session.currentUser
+            // currentUser: req.session.currentUser
         })
     })
 })
@@ -26,7 +26,7 @@ scores.get('/', (req, res) => {
 // New
 scores.get('/new', isAuthenticated, (req, res) => {
     res.render('scores/new.ejs', {
-        currentUser: req.session.currentUser
+        // currentUser: req.session.currentUser
     })
 })
 
@@ -36,7 +36,7 @@ scores.get('/:id', isAuthenticated, (req, res) => {
     Scores.findById(req.params.id, (err, foundLog) => {
         res.render('scores/show.ejs', {
             score: foundScore,
-            currentUser: req.session.currentUser
+            // currentUser: req.session.currentUser
         })
     })
     } else {
@@ -59,7 +59,7 @@ scores.get('/:id/edit', isAuthenticated, (req, res) => {
   Scores.findById(req.params.id, (error, foundScore) => {
     res.render('scores/edit.ejs', {
       score: foundScore,
-      currentUser: req.session.currentUser
+      // currentUser: req.session.currentUser
     })
   })
 })
