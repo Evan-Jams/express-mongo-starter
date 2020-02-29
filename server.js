@@ -21,11 +21,12 @@ const PORT = process.env.PORT || 3000;
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODBURI
 // Connect to Mongo
+mongoose.Promise = global.Promise
 mongoose.connect(MONGODB_URI ,  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
-    useCreateIndex: true
+    useCreateIndex: true,
 });
 
 // Error / success
@@ -73,3 +74,4 @@ app.get('/' , (req, res) => {
 //Listener
 //___________________
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+module.exports = mongoose
