@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const scoreSchema = new.mongoose.Schema({
+const scoreSchema = new mongoose.Schema({
     course: {type: String, required: true},
     tees: String,
     score: {type: Number, required: true},
