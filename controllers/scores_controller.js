@@ -49,7 +49,7 @@ scores.get('/:id', (req, res) => {
 
 // Create
 scores.post('/', (req, res) => {
-    // console.score(req.body);
+    console.log(req.body);
     Scores.create(req.body, (err, newScore) => {
         res.redirect('/')
     })

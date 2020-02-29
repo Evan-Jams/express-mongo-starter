@@ -35,12 +35,6 @@ db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
-const scoresController = require('./controllers/scores_controller.js')
-app.use('/scores', scoresController)
-// const sessionsController = require('./controllers/sessions_controller.js')
-// app.use('/sessions', sessionsController)
-// const usersController = require('./controllers/users_controller.js')
-// app.use('/users', usersController)
 
 // open the connection to mongo
 db.on('open' , ()=>{});
@@ -51,9 +45,8 @@ db.on('open' , ()=>{});
 
 //use public folder for static assets
 app.use(express.static('public'));
-// populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
-app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 app.use(session({
@@ -62,9 +55,18 @@ app.use(session({
     saveUninitialized: false
 }))
 
+
 //___________________
 // Routes
 //___________________
+const scoresController = require('./controllers/scores_controller.js')
+app.use('/scores', scoresController)
+// const sessionsController = require('./controllers/sessions_controller.js')
+// app.use('/sessions', sessionsController)
+// const usersController = require('./controllers/users_controller.js')
+// app.use('/users', usersController)
+
+
 //localhost:3000
 app.get('/' , (req, res) => {
   res.redirect('/scores');
