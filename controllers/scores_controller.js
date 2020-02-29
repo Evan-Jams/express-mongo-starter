@@ -2,14 +2,15 @@ const express = require('express')
 const scores = require('express').Router()
 const Scores = require('../models/scores.js')
 
-const isAuthenticated = (req, res, next) => {
-    if(req.session.currentUser) {
-        return next()
-    } else {
-        res.redirect('/sessions/new')
-    }
-}
+// const isAuthenticated = (req, res, next) => {
+//     if(req.session.currentUser) {
+//         return next()
+//     } else {
+//         res.redirect('/sessions/new')
+//     }
+// }
 
+// Presentation Routes
 // Index
 scores.get('/', (req, res) => {
     Scores.find({}, (err, allScores) => {
@@ -24,16 +25,16 @@ scores.get('/', (req, res) => {
 })
 
 // New
-scores.get('/new', isAuthenticated, (req, res) => {
+scores.get('/new', (req, res) => {
     res.render('scores/new.ejs', {
         // currentUser: req.session.currentUser
     })
 })
 
 // Show
-scores.get('/:id', isAuthenticated, (req, res) => {
+scores.get('/:id', (req, res) => {
     if(req.session.currentUser) {
-    Scores.findById(req.params.id, (err, foundLog) => {
+    Scores.findById(req.params.id, (err, foundScore) => {
         res.render('scores/show.ejs', {
             score: foundScore,
             // currentUser: req.session.currentUser
@@ -47,15 +48,15 @@ scores.get('/:id', isAuthenticated, (req, res) => {
 
 
 // Create
-scores.post('/', isAuthenticated, (req, res) => {
-    // console.log(req.body);
+scores.post('/', (req, res) => {
+    // console.score(req.body);
     Scores.create(req.body, (err, newScore) => {
-        res.redirect('/scores')
+        res.redirect('/')
     })
 })
 
 // Edit
-scores.get('/:id/edit', isAuthenticated, (req, res) => {
+scores.get('/:id/edit', (req, res) => {
   Scores.findById(req.params.id, (error, foundScore) => {
     res.render('scores/edit.ejs', {
       score: foundScore,
@@ -64,7 +65,7 @@ scores.get('/:id/edit', isAuthenticated, (req, res) => {
   })
 })
 // Update
-scores.put('/:id', isAuthenticated, (req, res) => {
+scores.put('/:id', (req, res) => {
   Scores.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -76,8 +77,8 @@ scores.put('/:id', isAuthenticated, (req, res) => {
 })
 
 // Delete
-scores.delete('/:id', isAuthenticated, (req, res) => {
-  Scores.findByIdAndRemove(req.params.id, (err, deletedLog) => {
+scores.delete('/:id', (req, res) => {
+  Scores.findByIdAndRemove(req.params.id, (err, deletedScore) => {
     res.redirect('/scores')
   })
 })

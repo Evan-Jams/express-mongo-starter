@@ -10,6 +10,6 @@ const scoreSchema = new mongoose.Schema({
     timestamps: true
 })
 
-const Scores = mongoose.model('Scores', scoreSchema)
+const Scores = mongoose.model('Score', scoreSchema)
 
 module.exports = Scores;

@@ -2,23 +2,26 @@
 <html lang="en" dir="ltr">
     <head>
         <%- include ('../partials/head.ejs') %>
-
     </head>
     <body>
-        <header>
-            <%- include ('../partials/header.ejs') %>
-        </header>
-        <div class="container">
-            <a href="/sessions/new">
-                <div class="cards">
-                    <h2>log in</h2>
-                </div>
-            </a>
-            <a href="/users/new">
-                <div class="cards">
-                    <h2>sign up</h2>
-                </div>
-            </a>
-        </div>
+        <nav>
+            <%- include ('../partials/nav.ejs') %>
+        </nav>
+            <h1>Evan's App</h1>
+
+            <ul>
+                <% for(let i = 0; i < scores.length; i++){ %>
+                    <li>
+                        <a href="/scores/<%=scores[i].id;%>">
+                        <%=scores[i].course; %>
+                        </a>
+
+                        <form class="" action="/scores/<%=scores[i].id;%>?_method=DELETE" method="post">
+                            <input type="submit" name="" value="DELETE">
+                        </form>
+                    </li>
+                <% } %>
+            </ul>
+
     </body>
 </html>
