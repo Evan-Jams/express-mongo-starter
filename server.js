@@ -22,7 +22,6 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODBURI || 'mongodb://localhost:27017/express_app'
 // console.info(MONGODB_URI)
 // Connect to Mongo
-mongoose.Promise = global.Promise
 mongoose.connect(MONGODB_URI ,  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
