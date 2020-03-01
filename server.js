@@ -24,9 +24,7 @@ const MONGODB_URI = process.env.MONGODBURI || 'mongodb://localhost:27017/express
 // Connect to Mongo
 mongoose.connect(MONGODB_URI ,  {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
+    useUnifiedTopology: true
 });
 
 // Error / success
