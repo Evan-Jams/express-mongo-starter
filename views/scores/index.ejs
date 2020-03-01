@@ -7,21 +7,34 @@
         <nav>
             <%- include ('../partials/nav.ejs') %>
         </nav>
-            <h1>Evan's App</h1>
+            <% if (currentUser) { %>
+                <ul>
+                    <% for(let i = 0; i < scores.length; i++){ %>
+                        <li>
+                            <a href="/scores/<%=scores[i].id;%>">
+                            <div>
+                                <%=scores[i].course; %>
+                            </div>
+                            </a>
+                            <a href="/scores/<%=scores[i].id;%>">
+                            <div>
+                                <%=scores[i].score; %>
+                            </div>
+                            </a>
+                            <a href="/scores/<%=scores[i].id;%>">
+                            <div>
+                                <%=scores[i].date; %>
+                            </div>
+                            </a>
 
-            <ul>
-                <% for(let i = 0; i < scores.length; i++){ %>
-                    <li>
-                        <a href="/scores/<%=scores[i].id;%>">
-                        <%=scores[i].course; %>
-                        </a>
 
-                        <form class="" action="/scores/<%=scores[i].id;%>?_method=DELETE" method="post">
-                            <input type="submit" name="" value="DELETE">
-                        </form>
-                    </li>
-                <% } %>
-            </ul>
+                        </li>
+                    <% } %>
+                </ul>
+            <% } %>
+            <a href="/scores/new">Post a New Score</a>
+            <!-- Going to build a new route where you can look at other user's scores but cannot edit or delete -->
+            <a href="/scores/new">View Scores</a>
 
     </body>
 </html>

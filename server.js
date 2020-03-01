@@ -61,10 +61,10 @@ app.use(session({
 //___________________
 const scoresController = require('./controllers/scores_controller.js')
 app.use('/scores', scoresController)
-// const sessionsController = require('./controllers/sessions_controller.js')
-// app.use('/sessions', sessionsController)
-// const usersController = require('./controllers/users_controller.js')
-// app.use('/users', usersController)
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
+const usersController = require('./controllers/users_controller.js')
+app.use('/users', usersController)
 
 
 //localhost:3000
