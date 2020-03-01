@@ -7,42 +7,42 @@
         <nav>
             <%- include ('../partials/nav.ejs') %>
         </nav>
-            <% if (currentUser) { %>
+        <div class="header">
+            <a href="/scores/new">Post<br>New Score</a>
+            <!-- Going to build a new route where you can look at other user's scores but cannot edit or delete -->
+            <a href="/scores/new">View Scores</a>
+        </div>
 
+            <% if (currentUser) { %>
+                <h2><%=currentUser.username%></h2>
                 <ul>
                     <% for(let i = 0; i < scores.length; i++){ %>
 
                         <li>
-                            <a href="/scores/<%=scores[i].id;%>">
-                            <div>
-                                <%=scores[i].course; %>
+                            <div class="left">
+                                <a href="/scores/<%=scores[i].id;%>">
+                                    <%=scores[i].date; %>
+                                </a>
                             </div>
-                            </a>
-                            <a href="/scores/<%=scores[i].id;%>">
-                            <div>
-                                <%=scores[i].score; %>
+                            <div class="right">
+                                <a href="/scores/<%=scores[i].id;%>">
+                                    <%=scores[i].course; %>
+                                </a>
+                                |
+                                <a href="/scores/<%=scores[i].id;%>">
+                                    <%=scores[i].score; %>
+                                </a>
                             </div>
-                            </a>
-                            <a href="/scores/<%=scores[i].id;%>">
-                            <div>
-                                <%=scores[i].date; %>
-                            </div>
-                            </a>
-
-
                         </li>
                     <% } %>
                 </ul>
-                <div>
+                <div class="handicap">
                     <% const par = 72 %>
-                    <% let total = scores.reduce((total, num) => { return total + num.score} , 0)%>
-                    <%= (total / scores.length) - par %>
+                    <% let total = scores.reduce((total, round) => { return total + round.score} , 0)%>
+                    <span>Handicap: <%= (total / scores.length) - par %></span>
                 </div>
             <% } %>
 
-            <a href="/scores/new">Post a New Score</a>
-            <!-- Going to build a new route where you can look at other user's scores but cannot edit or delete -->
-            <a href="/scores/new">View Scores</a>
         <script src="/js/app.js" charset="utf-8"></script>
     </body>
 </html>

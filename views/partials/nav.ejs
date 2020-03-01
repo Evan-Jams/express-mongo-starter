@@ -1,12 +1,12 @@
 <a href="/scores" class="brand-logo left">Handicap Tracker</a>
 <ul class="right">
   <% if (currentUser) { %>
-  <li>Welcome</li>
-  <li>
+  <div>Welcome <%=currentUser.username%></div>
+  <div>
     <form action="/sessions?_method=DELETE" method="POST">
       <input type="submit" value="Log Out" class="btn-small blue" />
     </form>
-  </li>
+  </div>
   <% } else { %>
   <li><a href="/users/new">Sign Up</a></li>
   <li><a href="/sessions/new">Log In</a></li>
