@@ -50,7 +50,7 @@ scores.get('/:id', isAuthenticated, (req, res) => {
 
 // Create
 scores.post('/', isAuthenticated, (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     Scores.create(req.body, (err, newScore) => {
         res.redirect('/')
     })
