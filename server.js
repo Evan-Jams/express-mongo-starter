@@ -56,17 +56,19 @@ app.use(session({
 //___________________
 // Routes
 //___________________
-const scoresController = require('./controllers/scores_controller.js')
-app.use('/scores', scoresController)
+const roundsController = require('./controllers/rounds_controller.js')
+app.use('/rounds', roundsController)
 const sessionsController = require('./controllers/sessions_controller.js')
 app.use('/sessions', sessionsController)
 const usersController = require('./controllers/users_controller.js')
 app.use('/users', usersController)
+const scorecardController = require('./controllers/scorecard_controller.js')
+app.use('/scorecard', scorecardController)
 
 
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.redirect('/scores');
+  res.redirect('/rounds');
 });
 
 //___________________

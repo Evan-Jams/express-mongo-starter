@@ -75,10 +75,16 @@ li {
     flex-direction: row;
     border: 1px solid grey;
     text-align: center;
+    margin: 0 5px;
 }
 .hole-info {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
+    margin: 0 5px;
+}
+
+span > input {
+    width: 30px;
 }

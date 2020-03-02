@@ -8,29 +8,29 @@
             <%- include ('../partials/nav.ejs') %>
         </nav>
         <div class="header">
-            <a href="/scores/new">Post<br>New Score</a>
+            <a href="/rounds/new">Post<br>New Score</a>
             <!-- Going to build a new route where you can look at other user's scores but cannot edit or delete -->
-            <a href="/scores/new">View Scores</a>
+            <a href="/rounds/new">View Scores</a>
         </div>
 
             <% if (currentUser) { %>
                 <h2><%=currentUser.username%></h2>
                 <ul>
-                    <% for(let i = 0; i < scores.length; i++){ %>
+                    <% for(let i = 0; i < rounds.length; i++){ %>
 
                         <li>
                             <div class="left">
-                                <a href="/scores/<%=scores[i].id;%>">
-                                    <%=scores[i].date; %>
+                                <a href="/rounds/<%=rounds[i].id;%>">
+                                    <%=rounds[i].date; %>
                                 </a>
                             </div>
                             <div class="right">
-                                <a href="/scores/<%=scores[i].id;%>">
-                                    <%=scores[i].course; %>
+                                <a href="/rounds/<%=rounds[i].id;%>">
+                                    <%=rounds[i].course; %>
                                 </a>
                                 |
-                                <a href="/scores/<%=scores[i].id;%>">
-                                    <%=scores[i].score; %>
+                                <a href="/rounds/<%=rounds[i].id;%>">
+                                    <%=rounds[i].score; %>
                                 </a>
                             </div>
                         </li>
@@ -38,8 +38,8 @@
                 </ul>
                 <div class="handicap">
                     <% const par = 72 %>
-                    <% let total = scores.reduce((total, round) => { return total + round.score} , 0)%>
-                    <span>Handicap: <%= (total / scores.length) - par %></span>
+                    <% let total = rounds.reduce((total, round) => { return total + round.score} , 0)%>
+                    <span>Handicap: <%= (total / rounds.length) - par %></span>
                 </div>
             <% } %>
 

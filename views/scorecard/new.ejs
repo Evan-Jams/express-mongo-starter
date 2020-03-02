@@ -7,31 +7,19 @@
         <nav>
             <%- include ('../partials/nav.ejs') %>
         </nav>
-            <h1>New Score</h1>
-            <form class="" action="/scores" method="POST">
-                <label for="course">Course</label>
-                <input type="text" name="course" /><br>
-                <label for="score">Score</label>
-                <input type="text" name="score" /><br>
-                <label for="tees">Tees</label>
-                <input type="text" name="tees" /><br>
-                <label for="date">Date</label>
-                <input type="text" name="date" /><br>
-                <input type="submit" name="" value="Submit Score">
-            </form>
-            <!-- Score Card Layout -->
-            <div class="scorecard">
-                <div class="card-labels">
-                    <div class="">
-                        <span>Hole</span>
-                    </div>
-                    <div class="">
-                        <span>Par</span>
-                    </div>
-                    <div class="">
-                        <span><%=currentUser.username%></span>
-                    </div>
+        <div class="scorecard">
+            <div class="card-labels">
+                <div class="">
+                    <span>Hole</span>
                 </div>
+                <div class="">
+                    <span>Par</span>
+                </div>
+                <div class="">
+                    <span><%=currentUser.username%></span>
+                </div>
+            </div>
+            <form class="" action="/rounds" method="post">
                 <div class="front-9">
                     <div class="hole-info">
                         <span>
@@ -41,7 +29,7 @@
                             5
                         </span>
                         <span>
-                            form
+                            <input type="number" name="1" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -52,7 +40,7 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="2" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -63,7 +51,7 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="3" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -74,7 +62,7 @@
                             3
                         </span>
                         <span>
-                            form
+                            <input type="number" name="4" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -85,7 +73,7 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="5" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -96,7 +84,7 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="6" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -107,7 +95,7 @@
                             5
                         </span>
                         <span>
-                            form
+                            <input type="number" name="7" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -118,7 +106,7 @@
                             3
                         </span>
                         <span>
-                            form
+                            <input type="number" name="8" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -129,7 +117,7 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="9" value="">
                         </span>
                     </div>
                 </div>
@@ -142,7 +130,7 @@
                             5
                         </span>
                         <span>
-                            form
+                            <input type="number" name="10" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -153,7 +141,7 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="11" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -164,7 +152,7 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="12" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -175,7 +163,7 @@
                             3
                         </span>
                         <span>
-                            form
+                            <input type="number" name="13" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -186,7 +174,7 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="14" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -197,7 +185,7 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="15" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -208,7 +196,7 @@
                             5
                         </span>
                         <span>
-                            form
+                            <input type="number" name="16" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -219,7 +207,7 @@
                             3
                         </span>
                         <span>
-                            form
+                            <input type="number" name="17" value="">
                         </span>
                     </div>
                     <div class="hole-info">
@@ -230,10 +218,13 @@
                             4
                         </span>
                         <span>
-                            form
+                            <input type="number" name="18" value="">
                         </span>
+                    </div>
                 </div>
-            </div>
-        <script src="/js/app.js" charset="utf-8"></script>
+                <input type="submit" name="" value="Submit Scorecard">
+            </form>
+        </div>
+
     </body>
 </html>
