@@ -50,7 +50,6 @@ rounds.get('/:id', isAuthenticated, (req, res) => {
 
 // Create
 rounds.post('/', isAuthenticated, (req, res) => {
-    // console.log(req.body);
     Rounds.create(req.body, (err, newRound) => {
         res.redirect('/')
     })

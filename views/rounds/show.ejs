@@ -7,19 +7,19 @@
         <nav>
             <%- include ('../partials/nav.ejs') %>
         </nav>
-        <h1>Score info</h1>
+        <h1>Round info</h1>
         <div>
-            <%=score.course; %>
+            <%=round.course; %>
         </div>
         <div>
-            <%=score.score; %>
+            <%=round.score; %>
         </div>
         <div>
-            <%=score.date; %>
+            <%=round.date; %>
         </div>
         <!-- input a scorecard with individual information or something possibly -->
-        <a href="/scores/<%=score.id%>/edit">Edit Round</a>
-        <form class="" action="/scores/<%=score.id;%>?_method=DELETE" method="post">
+        <a href="/rounds/<%=round.id%>/edit">Edit Round</a>
+        <form class="" action="/rounds/<%=round.id;%>?_method=DELETE" method="post">
             <input type="submit" name="" value="DELETE">
         </form>
         <script src="/js/app.js" charset="utf-8"></script>

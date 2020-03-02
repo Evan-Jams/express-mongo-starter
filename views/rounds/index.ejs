@@ -8,7 +8,7 @@
             <%- include ('../partials/nav.ejs') %>
         </nav>
         <div class="header">
-            <a href="/rounds/new">Post<br>New Score</a>
+            <a href="/rounds/new">Post<br>New Round</a>
             <!-- Going to build a new route where you can look at other user's scores but cannot edit or delete -->
             <a href="/rounds/new">View Scores</a>
         </div>
@@ -39,7 +39,7 @@
                 <div class="handicap">
                     <% const par = 72 %>
                     <% let total = rounds.reduce((total, round) => { return total + round.score} , 0)%>
-                    <span>Handicap: <%= (total / rounds.length) - par %></span>
+                    <span>Handicap: <%= Math.round(((total / rounds.length) - par)*10)/10 %></span>
                 </div>
             <% } %>
 
