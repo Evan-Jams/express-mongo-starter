@@ -90,6 +90,6 @@ const roundSchema = new Schema({
 })
 
 const Rounds = mongoose.model('Rounds', roundSchema)
-const Scorecard = mongoose.model('Scorecard', scorecardSchema)
+// const Scorecard = mongoose.model('Scorecard', scorecardSchema)
 
-module.exports = (Rounds, Scorecard);
+module.exports = Rounds
