@@ -3,95 +3,77 @@ const Schema = mongoose.Schema
 
 const scorecardSchema = new Schema({
     holes:{
-        '1': {
-            type: Number,
-            par: 5,
-            required: true
+        one : {
+            stokes: Number,
+            par: Number || 5
         },
-        '2': {
-            type: Number,
-            par: 4,
-            required: true
+        two: {
+            stokes: Number,
+            par: Number || 4
         },
-        '3': {
-            type: Number,
-            par: 4,
-            required: true
+        three: {
+            stokes: Number,
+            par: Number || 4
         },
-        '4': {
-            type: Number,
-            par: 3,
-            required: true
+        four: {
+            stokes: Number,
+            par: Number || 3
         },
-        '5': {
-            type: Number,
-            par: 4,
-            required: true
+        five: {
+            stokes: Number,
+            par: Number || 4
         },
-        '6': {
-            type: Number,
-            par: 4,
-            required: true
+        six: {
+            stokes: Number,
+            par: Number || 4
         },
-        '7': {
-            type: Number,
-            par: 5,
-            required: true
+        seven: {
+            stokes: Number,
+            par: Number || 5
         },
-        '8': {
-            type: Number,
-            par: 3,
-            required: true
+        eight: {
+            stokes: Number,
+            par: Number || 3
         },
-        '9': {
-            type: Number,
-            par: 4,
-            required: true
+        nine: {
+            stokes: Number,
+            par: Number || 4
         },
-        '10': {
-            type: Number,
-            par: 5,
-            required: true
+        ten: {
+            stokes: Number,
+            par: Number || 5
         },
-        '11': {
-            type: Number,
-            par: 4,
-            required: true
+        eleven: {
+            stokes: Number,
+            par: Number || 4
         },
-        '12': {
-            type: Number,
-            par: 4,
-            required: true
+        twelve: {
+            stokes: Number,
+            par: Number || 4
         },
-        '13': {
-            type: Number,
-            par: 3,
-            required: true
+        thirteen: {
+            stokes: Number,
+            par: Number || 3
         },
-        '14': {
-            type: Number,
-            par: 4,
-            required: true
+        fourteen: {
+            stokes: Number,
+            par: Number || 4
         },
-        '15': {
-            type: Number,
-            par: 4,
-            required: true
+        fifteen: {
+            stokes: Number,
+            par: Number || 4
         },
-        '16': {
-            type: Number,
-            par: 5,
-            required: true
+        sixteen: {
+            stokes: Number,
+            par: Number || 5
         },
-        '17': {
-            type: Number,
-            par: 3,
-            required: true
+        seventeen: {
+            stokes: Number,
+            par: Number || 3
         },
-        '18': {
-            type: Number,
-            par: 4,
-            required: true
+        eighteen: {
+            stokes: Number,
+            par: Number || 4
         },
     }
 })
@@ -101,13 +83,13 @@ const roundSchema = new Schema({
     tees: String,
     score: {type: Number, required: true},
     date: {type: String, required: true, default: Date.now},
-    // scorecard: scorecardSchema
+    scorecard: scorecardSchema
 },
 {
     timestamps: true
 })
 
 const Rounds = mongoose.model('Rounds', roundSchema)
-// const Scorecard = mongoose.model('Scorecard', scorecardSchema)
+const Scorecard = mongoose.model('Scorecard', scorecardSchema)
 
-module.exports = Rounds;
+module.exports = (Rounds, Scorecard);
