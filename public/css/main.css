@@ -17,6 +17,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 20px;
+    overflow: scroll;
 }
 
 h1 {
@@ -44,12 +45,25 @@ nav {
 nav > ul {
     display: flex;
     justify-content: space-around;
+    font-size: 20px;
     background-color: white;
+    height: 60px;
+}
+
+#logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn {
+    color: #a6110c;
+    box-shadow: 2px 2px 2px gainsboro;
 }
 
 .brand-logo {
     color: #0e4b8a;
-    font-size: 30px;
+    font-size: 45px;
 }
 
 .welcome {
@@ -72,9 +86,10 @@ nav > ul {
     border-radius: 5px;
     background: white;
     color: #0e4b8a;
-    height: 65px;
-    width: 150px;
-    margin: 0 20px;
+    height: 80px;
+    width: 180px;
+    margin: 30px 20px 0 20px;
+    font-size: 25px;
 }
 
 
@@ -83,7 +98,7 @@ ul {
     border: 1px solid grey;
     border-radius: 5px;
     background-color: white;
-    margin: 10px;
+    margin: 20px 30px 20px 30px;
 }
 
 li {
@@ -93,6 +108,8 @@ li {
     margin: 10px 0;
     border-bottom: 1px solid grey;
 }
+
+
 
 .handicap {
     display: flex;
@@ -144,6 +161,7 @@ fieldset {
     border: 1px solid white;
     border-radius: 5px;
     width: 175px;
+    margin: 5px;
 }
 
 legend {
@@ -156,7 +174,7 @@ input {
     width: 125px;
 }
 
-.top-form, .bottom-form {
+.form {
     display: flex;
     margin-bottom: 10px;
 }

@@ -4,17 +4,23 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <header>
-      <%- include ('../partials/header.ejs') %>
-    </header>
-    <div class="container">
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+  </nav>
+    <div class="main-container">
       <h1>Log In</h1>
       <form action="/sessions" method="POST">
-        <label for="name">User Name:</label>
-        <input type="text" name="username" required/>
-        <label for="color">Password:</label>
-        <input type="password" name="password" />
-        <br>
+          <div class="form">
+              <fieldset>
+                  <legend>User Name</legend>
+                  <input type="text" name="username" required/>
+              </fieldset>
+              <fieldset>
+                  <legend>Password</legend>
+                  <input type="password" name="password" required/>
+              </fieldset>
+          </div>
+
         <input type="submit" value="Submit">
       <form>
     </div>

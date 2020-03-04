@@ -16,7 +16,7 @@
             <% if (currentUser) { %>
 
             <div class="handicap">
-                <h2><%=currentUser.username%></h2>
+                <h2>User: <%=currentUser.username%></h2>
                 <% const par = 72 %>
                 <% let total = rounds.reduce((total, round) => { return total + round.score} , 0)%>
                 <h2>Handicap: <%= Math.round(((total / rounds.length) - par)*10)/10 %></h2>
@@ -46,7 +46,7 @@
             <% } %>
         </div>
         <footer>
-            
+
         </footer>
         <script src="/js/app.js" charset="utf-8"></script>
     </body>
