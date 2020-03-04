@@ -7,42 +7,47 @@
         <nav>
             <%- include ('../partials/nav.ejs') %>
         </nav>
-        <div class="header">
-            <a href="/rounds/new">Post<br>New Round</a>
-            <!-- Going to build a new route where you can look at other user's scores but cannot edit or delete -->
-            <a href="/rounds/new">View Scores</a>
-        </div>
-
+        <div class="main-container">
+            <div class="header">
+                <a href="/rounds/new">Post<br>New Round</a>
+                <!-- Going to build a new route where you can look at other user's scores but cannot edit or delete -->
+                <a href="/rounds/new">View Scores</a>
+            </div>
             <% if (currentUser) { %>
+
+            <div class="handicap">
                 <h2><%=currentUser.username%></h2>
-                <ul>
-                    <% for(let i = 0; i < rounds.length; i++){ %>
+                <% const par = 72 %>
+                <% let total = rounds.reduce((total, round) => { return total + round.score} , 0)%>
+                <h2>Handicap: <%= Math.round(((total / rounds.length) - par)*10)/10 %></h2>
+            </div>
+            <ul>
+                <% for(let i = 0; i < rounds.length; i++){ %>
 
-                        <li>
-                            <div class="left">
-                                <a href="/rounds/<%=rounds[i].id;%>">
-                                    <%=rounds[i].date; %>
-                                </a>
-                            </div>
-                            <div class="right">
-                                <a href="/rounds/<%=rounds[i].id;%>">
-                                    <%=rounds[i].course; %>
-                                </a>
-                                |
-                                <a href="/rounds/<%=rounds[i].id;%>">
-                                    <%=rounds[i].score; %>
-                                </a>
-                            </div>
-                        </li>
-                    <% } %>
-                </ul>
-                <div class="handicap">
-                    <% const par = 72 %>
-                    <% let total = rounds.reduce((total, round) => { return total + round.score} , 0)%>
-                    <span>Handicap: <%= Math.round(((total / rounds.length) - par)*10)/10 %></span>
-                </div>
+                    <li>
+                        <div class="left">
+                            <a href="/rounds/<%=rounds[i].id;%>">
+                                <%=rounds[i].date; %>
+                            </a>
+                        </div>
+                        <div class="right">
+                            <a href="/rounds/<%=rounds[i].id;%>">
+                                <%=rounds[i].course; %>
+                            </a>
+                            |
+                            <a href="/rounds/<%=rounds[i].id;%>">
+                                <%=rounds[i].score; %>
+                            </a>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+
             <% } %>
-
+        </div>
+        <footer>
+            
+        </footer>
         <script src="/js/app.js" charset="utf-8"></script>
     </body>
 </html>
