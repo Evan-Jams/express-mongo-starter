@@ -19,6 +19,18 @@ body {
     padding-top: 20px;
 }
 
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    color: #0e4b8a;
+    width: 250px;
+    margin: 20px auto;
+}
+
 a {
     text-decoration: none;
     margin: 5px;
@@ -41,6 +53,8 @@ nav > ul {
 }
 
 .welcome {
+    display: flex;
+    align-items: center;
     color: #a6110c;
 }
 

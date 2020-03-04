@@ -11,15 +11,34 @@
             <blockquote>
                 <h1>Edit Round</h1>
                 <form class="" action="/rounds/<%=round.id%>?_method=PUT" method="post">
-                    <label for="course">course</label>
-                    <input type="text" name="course" value="<%=round.course%>" /><br>
-                    <label for="score">score</label>
-                    <input type="text" name="score" value="<%=round.score%>"/><br>
-                    <label for="tees">tees</label>
-                    <input type="text" name="tees" value="<%=round.tees%>" /><br>
-                    <label for="date">date</label>
-                    <input type="text" name="date" value="<%=round.date%>" /><br>
-                    <br>
+                    <!-- <label for="course">course</label> -->
+                    <div class="top-form">
+                        <fieldset>
+                            <legend>Course</legend>
+                            <select id = "courseList" name="course">
+                               <option value = "home">home</option>
+                               <option value = "away">away</option>
+                            </select>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Tees</legend>
+                            <select id = "teesList" name="tees">
+                               <option value = "back">back</option>
+                               <option value = "middle">middle</option>
+                               <option value = "forward">forward</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                    <div class="bottom-form">
+                        <fieldset>
+                            <legend>Score</legend>
+                            <input type="text" name="score" value="<%=round.score%>"/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Date</legend>
+                            <input type="date" name="date" value="<%=round.date%>"/>
+                        </fieldset>
+                    </div>
                     <input type="submit" name="" value="Submit Log">
                 </form>
             </blockquote>
