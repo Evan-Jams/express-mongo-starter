@@ -7,13 +7,13 @@ body {
     height: 100vh;
     width: 95%;
     margin: 10px auto;
-    background-color: #434445;
+    background-color: white;
 }
 
 .main-container {
-    background-image: url(https://www.johncordeira.com/wp-content/uploads/2014/06/Sunset-Golf-Course.jpg);
+    background-image: url(https://i.pinimg.com/originals/75/75/2b/75752b606df7654bbb7d62f504ca1005.jpg);
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 20px;
@@ -22,10 +22,11 @@ body {
 a {
     text-decoration: none;
     margin: 5px;
-    color: black;
+    color: #a6110c;
 }
 nav {
     text-align: center;
+    margin: 20px;
 }
 
 nav > ul {
@@ -35,8 +36,12 @@ nav > ul {
 }
 
 .brand-logo {
-    color: white;
+    color: #0e4b8a;
     font-size: 30px;
+}
+
+.welcome {
+    color: #a6110c;
 }
 
 .header {
@@ -52,7 +57,7 @@ nav > ul {
     border: 1px solid grey;
     border-radius: 5px;
     background: white;
-    color: blue;
+    color: #0e4b8a;
     height: 65px;
     width: 150px;
     margin: 0 20px;
@@ -79,10 +84,9 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: #fff;
     margin: 20px;
     margin-bottom: 0;
-    color: white;
     font-size: 16px;
 }
 

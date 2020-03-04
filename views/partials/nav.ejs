@@ -1,7 +1,7 @@
 <a href="/rounds" class="brand-logo">Handicap Tracker</a>
 <ul class="right">
   <% if (currentUser) { %>
-  <div>Welcome <%=currentUser.username%></div>
+  <div class="welcome">Welcome <%=currentUser.username%></div>
   <div>
     <form action="/sessions?_method=DELETE" method="POST">
       <input type="submit" value="Log Out" />
