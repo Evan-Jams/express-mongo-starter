@@ -4,24 +4,28 @@
         <%- include ('../partials/head.ejs') %>
     </head>
     <body>
+
         <nav>
             <%- include ('../partials/nav.ejs') %>
         </nav>
-        <h1>Round info</h1>
-        <div>
-            <%=round.course; %>
+        <div class="main-container">
+            <h1>Round info</h1>
+            <div>
+                <%=round.course; %>
+            </div>
+            <div>
+                <%=round.score; %>
+            </div>
+            <div>
+                <%=round.date; %>
+            </div>
+            <!-- input a scorecard with individual information or something possibly -->
+            <a href="/rounds/<%=round.id%>/edit">Edit Round</a>
+            <form class="" action="/rounds/<%=round.id;%>?_method=DELETE" method="post">
+                <input type="submit" name="" value="DELETE">
+            </form>
         </div>
-        <div>
-            <%=round.score; %>
-        </div>
-        <div>
-            <%=round.date; %>
-        </div>
-        <!-- input a scorecard with individual information or something possibly -->
-        <a href="/rounds/<%=round.id%>/edit">Edit Round</a>
-        <form class="" action="/rounds/<%=round.id;%>?_method=DELETE" method="post">
-            <input type="submit" name="" value="DELETE">
-        </form>
+
         <script src="/js/app.js" charset="utf-8"></script>
     </body>
 </html>
