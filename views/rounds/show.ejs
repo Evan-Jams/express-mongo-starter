@@ -10,17 +10,26 @@
         </nav>
         <div class="main-container">
             <h1>Round info</h1>
-            <div>
-                <%=round.course; %>
+            <div class="round-info">
+                <div>
+                    <span>Course:</span>
+                    <br>
+                    <%=round.course; %>
+                </div>
+                <div>
+                    <span>Score:</span>
+                    <br>
+                    <%=round.score; %>
+                </div>
+                <div>
+                    <span>Date:</span>
+                    <br>
+                    <%=round.date; %>
+                </div>
+                <!-- input a scorecard with individual information or something possibly -->
+                <a href="/rounds/<%=round.id%>/edit">Edit Round</a>
             </div>
-            <div>
-                <%=round.score; %>
-            </div>
-            <div>
-                <%=round.date; %>
-            </div>
-            <!-- input a scorecard with individual information or something possibly -->
-            <a href="/rounds/<%=round.id%>/edit">Edit Round</a>
+
             <form class="" action="/rounds/<%=round.id;%>?_method=DELETE" method="post">
                 <input type="submit" name="" value="DELETE">
             </form>
