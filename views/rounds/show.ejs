@@ -13,26 +13,25 @@
             <div class="round-info">
                 <div>
                     <span>Course:</span>
-                    <br>
-                    <%=round.course; %>
+                    <%=round.course.charAt(0).toUpperCase() + round.course.slice(1) %>
                 </div>
                 <div>
                     <span>Score:</span>
-                    <br>
                     <%=round.score; %>
                 </div>
                 <div>
                     <span>Date:</span>
-                    <br>
                     <%=round.date; %>
                 </div>
                 <!-- input a scorecard with individual information or something possibly -->
-                <a href="/rounds/<%=round.id%>/edit">Edit Round</a>
+            </div>
+            <div class="edit-delete">
+                <a href="/rounds/<%=round.id%>/edit" class="edit-btn">EDIT</a>
+                <form class="" action="/rounds/<%=round.id;%>?_method=DELETE" method="post">
+                    <input type="submit" class="submit-btn" value="DELETE">
+                </form>
             </div>
 
-            <form class="" action="/rounds/<%=round.id;%>?_method=DELETE" method="post">
-                <input type="submit" name="" value="DELETE">
-            </form>
         </div>
 
         <script src="/js/app.js" charset="utf-8"></script>
