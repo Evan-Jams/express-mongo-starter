@@ -12,7 +12,7 @@
                 <h1>Edit Round</h1>
                 <form class="" action="/rounds/<%=round.id%>?_method=PUT" method="post">
                     <!-- <label for="course">course</label> -->
-                    <div class="top-form">
+                    <div class="form">
                         <fieldset>
                             <legend>Course</legend>
                             <select id = "courseList" name="course">
@@ -29,7 +29,7 @@
                             </select>
                         </fieldset>
                     </div>
-                    <div class="bottom-form">
+                    <div class="form">
                         <fieldset>
                             <legend>Score</legend>
                             <input type="text" name="score" value="<%=round.score%>"/>

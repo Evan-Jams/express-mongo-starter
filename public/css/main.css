@@ -25,7 +25,7 @@ h1 {
     display: flex;
     justify-content: center;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid grey;
     border-radius: 5px;
     padding: 10px;
     color: #0e4b8a;
@@ -37,6 +37,7 @@ a {
     text-decoration: none;
     margin: 5px;
     color: #a6110c;
+    cursor: pointer;
 }
 
 nav {
@@ -95,22 +96,27 @@ nav > ul > li {
     box-shadow: 2px 2px 2px gainsboro;
     font-size: 15px;
     height: 35px;
+    cursor: pointer;
 }
 
 .edit-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid gainsboro;
+    border: 1px solid grey;
     background: white;
     border-radius: 5px;
-    height: 25px;
-    width: 125px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
 }
 
 .submit-btn {
     font-size: 15px;
+    height: 50px;
     color: #a6110c;
+    border: 1px solid grey;
+    cursor: pointer;
 }
 
 .brand-logo {
@@ -212,18 +218,21 @@ form {
 fieldset {
     border: 1px solid white;
     border-radius: 5px;
-    width: 175px;
-    margin: 5px;
+    width: 250px;
+    height: 75px;
+    margin: 8px;
 }
 
 legend {
+    font-size: 20px;
     color: white;
 }
 
 input {
     border-radius: 5px;
-    height: 25px;
-    width: 125px;
+    height: 28px;
+    width: 150px;
+    font-size: 15px;
 }
 
 .form {
@@ -231,8 +240,19 @@ input {
     margin-bottom: 10px;
 }
 
+select {
+    height: 28px;
+    width: 150px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
 .edit-delete {
     display: flex;
     justify-content: center;
     margin: 20px;
+}
+
+#date-btn {
+    cursor: pointer;
 }
